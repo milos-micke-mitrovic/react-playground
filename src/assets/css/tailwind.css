@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-light dark:bg-dark text-dark dark:text-light py-4 md:py-0 px-5 md:px-11 
+  scrollbar-thin  scrollbar-thumb-green scrollbar-track-light font-mono;
+}
+
+input {
+  @apply text-light dark:text-green  border border-green bg-green dark:bg-light px-2 py-1 rounded-md;
+}
+
+a,
+button,
+select {
+  @apply text-green hover:text-light-green rounded-md;
+}
+
+button,
+select {
+  @apply border border-green p-1 px-2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  @apply text-dark dark:text-light;
+}

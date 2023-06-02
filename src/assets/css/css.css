@@ -1,0 +1,43 @@
+.banner {
+  background-image: url("images/home-banner.png");
+  background-repeat: none;
+  background-size: 100% 100%;
+}
+
+/* Flip card section */
+.scene {
+  display: inline-block;
+  perspective: 600px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 0.5s;
+}
+
+.card.is-flipped {
+  cursor: auto;
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  backface-visibility: hidden;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+/* End flip card section */
