@@ -48,5 +48,14 @@
   "congratualtions": "Congratualtions",
   "you-are-both-winners": "You are both winners",
   "its-your-turn": "It's your turn",
-  "reset": "Reset"
+  "reset": "Reset",
+  "minesweeper": "Minesweeper",
+  "level": "Level",
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "expert": "Expert",
+  "custom": "Custom",
+  "width": "Width",
+  "height": "Height",
+  "mines": "Mines"
 }

@@ -9,7 +9,8 @@ import {
   faVial,
   faCloud,
   faBrain,
-  faX
+  faX,
+  faExplosion,
 } from "@fortawesome/free-solid-svg-icons";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
@@ -86,11 +87,17 @@ const Navbar = (): JSX.Element => {
                 icon={faBrain}
                 link="/memory-game"
               />
-              
+
               <NavBarLink
                 setShowDropdownMenu={setShowDropdownMenu}
                 icon={faX}
                 link="/tic-tac-toe"
+              />
+
+              <NavBarLink
+                setShowDropdownMenu={setShowDropdownMenu}
+                icon={faExplosion}
+                link="/minesweeper"
               />
 
               <li className="m-auto">

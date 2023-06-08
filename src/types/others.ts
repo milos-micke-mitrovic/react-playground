@@ -72,9 +72,9 @@ export type GameImageType = {
 };
 
 export type GameCardType = {
-  id:number;
-  uniqueId:number;
-  url:string;
+  id: number;
+  uniqueId: number;
+  url: string;
   isShown: boolean;
   isFound: boolean;
-}
+};

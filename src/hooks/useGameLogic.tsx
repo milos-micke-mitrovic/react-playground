@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { GameCardType, GameImageType } from "../types";
+import { GameCardType, GameImageType } from "../types/others";
 import { getFormedImagesData, shuffleCards } from "../utils/memoryGame";
 import { MAX_VISIBLE_CARDS, PACES } from "../constants/memoryGame";
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GameCardType } from "../../types";
+import { GameCardType } from "../../types/others";
 
 type Prop = {
   card: GameCardType;

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import RadioBox from "./RadioBox";
 import Counter from "./Counter";
-import { GameOptionsType } from "../../types";
+import { GameOptionsType } from "../../types/others";
 import {
   CATEGORIES,
   INITIAL_CARDS_COUNT,

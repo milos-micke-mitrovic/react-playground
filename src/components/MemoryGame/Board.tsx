@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useGetImages from "../../hooks/useGetImages";
-import { GameOptionsType } from "../../types";
+import { GameOptionsType } from "../../types/others";
 import Spinner from "../Spinner";
 import useGameLogic from "../../hooks/useGameLogic";
 import Card from "./Card";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
-import { GameOptionsType } from "../types";
+import { GameOptionsType } from "../types/others";
 import PageTitle from "../components/PageTitle";
 import Settings from "../components/MemoryGame/Settings";
 import Board from "../components/MemoryGame/Board";

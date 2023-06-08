@@ -48,5 +48,14 @@
   "congratualtions": "Čestitamo",
   "you-are-both-winners": "Oba se pobednici",
   "its-your-turn": "Ti si na potezu",
-  "reset": "Restartuj"
+  "reset": "Restartuj",
+  "minesweeper": "Minolovac",
+  "level": "Nivo",
+  "beginner": "Početnik",
+  "intermediate": "Iskusan",
+  "expert": "Ekspert",
+  "custom": "Prilagodjeno",
+  "width": "Širina",
+  "height": "Visina",
+  "mines": "Mine"
 }

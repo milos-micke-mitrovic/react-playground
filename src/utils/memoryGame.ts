@@ -1,4 +1,4 @@
-import { GameCardType, GameImageType } from "../types";
+import { GameCardType, GameImageType } from "../types/others";
 
 // Shuffle the cards to "mess up" with their order
 export const shuffleCards = (cards: GameCardType[]): GameCardType[] => {

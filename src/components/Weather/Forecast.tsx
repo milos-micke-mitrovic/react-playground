@@ -15,7 +15,7 @@ import {
   faHandFist,
   faEye
 } from "@fortawesome/free-solid-svg-icons";
-import { ForecastType } from "../../types";
+import { ForecastType } from "../../types/others";
 import Degree from "./Degree";
 import {
   getFeelsLike,

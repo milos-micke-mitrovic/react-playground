@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GeoOptionType, ForecastType } from "../types";
+import { GeoOptionType, ForecastType } from "../types/others";
 
 const useWeather = () => {
   const [term, setTerm] = useState<string>("");

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { GeoOptionType } from "../../types";
+import { GeoOptionType } from "../../types/others";
 
 type Props = {
   onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

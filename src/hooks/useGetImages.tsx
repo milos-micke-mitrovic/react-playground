@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { radnomNumber } from "../utils/others";
-import { GameImageType, GameOptionsType } from "../types";
+import { GameImageType, GameOptionsType } from "../types/others";
 
 const useGetImages = (gameOptions: GameOptionsType | null) => {
   const [images, setImages] = useState<GameImageType[]>([]);
