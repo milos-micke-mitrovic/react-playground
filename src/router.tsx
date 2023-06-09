@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, createHashRouter } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
 
@@ -14,7 +14,7 @@ import TicTacToe from "./pages/TicTacToe";
 import Minesweeper from "./pages/Minesweeper";
 import FlappyCat from "./pages/FlappyCat";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
