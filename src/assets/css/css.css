@@ -4,11 +4,26 @@
   background-size: 100% 100%;
 }
 
+.no-select {
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
+/* Disable arrow in input[type="number"]
+/* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* End disable arrow in input[type="number"]
 
 /* Flip card section */
 .scene {

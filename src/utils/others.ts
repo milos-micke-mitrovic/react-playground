@@ -3,8 +3,8 @@ import * as htmlToImage from "html-to-image";
 export const capitalizeFirstLetter = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
-export const radnomNumber = (max: number, min: number): string =>
-  Math.round(Math.random() * (max - min) + 1).toString();
+export const randomNumber = (max: number, min: number): string =>
+  Math.floor(Math.random() * (max - min + 1) + min).toString();
 
 export const downloadDiv = (title: string, element: HTMLElement) => {
   htmlToImage

@@ -12,6 +12,7 @@ import Weather from "./pages/Weather";
 import MemoryGame from "./pages/MemoryGame";
 import TicTacToe from "./pages/TicTacToe";
 import Minesweeper from "./pages/Minesweeper";
+import FlappyCat from "./pages/FlappyCat";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/minesweeper",
         element: <Minesweeper />,
+      },
+      {
+        path: "/flappy-cat",
+        element: <FlappyCat />,
       },
       { path: "*", element: <NotFound /> },
     ],

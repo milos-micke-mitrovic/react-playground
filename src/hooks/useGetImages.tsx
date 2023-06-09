@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { radnomNumber } from "../utils/others";
+import { randomNumber } from "../utils/others";
 import { GameImageType, GameOptionsType } from "../types/others";
 
 const useGetImages = (gameOptions: GameOptionsType | null) => {
@@ -14,7 +14,7 @@ const useGetImages = (gameOptions: GameOptionsType | null) => {
           gameOptions.category
         }&orientation=square&size=small&per_page=${
           gameOptions.cardsCount / 2
-        }&page=${radnomNumber(10, 1)}`
+        }&page=${randomNumber(10, 1)}`
       : "";
 
     return url + searchQuery;

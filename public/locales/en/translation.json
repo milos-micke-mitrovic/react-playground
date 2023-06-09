@@ -57,5 +57,7 @@
   "custom": "Custom",
   "width": "Width",
   "height": "Height",
-  "mines": "Mines"
+  "mines": "Mines",
+  "flappy-cat": "Flappy cat",
+  "time": "Time"
 }

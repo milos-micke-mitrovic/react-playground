@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPaw,
   faHome,
@@ -11,6 +10,7 @@ import {
   faBrain,
   faX,
   faExplosion,
+  faCat
 } from "@fortawesome/free-solid-svg-icons";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSelector from "./ThemeSelector";
@@ -98,6 +98,12 @@ const Navbar = (): JSX.Element => {
                 setShowDropdownMenu={setShowDropdownMenu}
                 icon={faExplosion}
                 link="/minesweeper"
+              />
+
+              <NavBarLink
+                setShowDropdownMenu={setShowDropdownMenu}
+                icon={faCat}
+                link="/flappy-cat"
               />
 
               <li className="m-auto">
