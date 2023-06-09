@@ -23,14 +23,14 @@ const FlappyCat = (): JSX.Element => {
     <div className="flex flex-col items-center gap-4 w-full md:w-1/2 mx-auto">
       <PageTitle icon={faCat} title="flappy-cat" />
 
-      <div className="flex gap-28 items-center">
+      <div className="flex flex-col gap-4 justify-center">
         <button onClick={resetGame}>{t("reset")}</button>
         <div
           className={`text-2xl ${
             gameStatus === GameStatus.finished ? "animate-ping" : ""
           }`}
         >
-          {t('time')} : {time}
+          {t("time")} : {time}
         </div>
       </div>
 
@@ -41,12 +41,10 @@ const FlappyCat = (): JSX.Element => {
         <div className="absolute no-select" style={catStyles}>
           {gameStatus === GameStatus.finished ? sadCatImg : flappyCatImg}
         </div>
-
         <div
           className="bg-green absolute w-3 md:w-6 top-0"
           style={topObstacleStyles}
         ></div>
-
         <div
           className="bg-green absolute w-3 md:w-6 bottom-0"
           style={bottomObstacleStyles}

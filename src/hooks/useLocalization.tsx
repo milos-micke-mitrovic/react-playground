@@ -30,7 +30,6 @@ const useLocalization = () => {
 
   const handleLanguageChange = async (language: { key: string; name: string, flagKey: string }) => {
     await i18n.changeLanguage(language.key);
-    console.log(language.key);
     setIsOpen(false);
   };
 

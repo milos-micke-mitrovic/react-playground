@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { CAT_STARTING_POSITION, GRAVITY, JUMP_HEIGHT, OBSTACLE_GAP, OBSTACLE_STARTING_POSITION } from "../constants/flappyCat";
+import {
+  CAT_STARTING_POSITION,
+  GRAVITY,
+  IMAGE_HEIGHT,
+  IMAGE_WIDTH,
+  JUMP_HEIGHT,
+  OBSTACLE_GAP,
+  OBSTACLE_STARTING_POSITION,
+} from "../constants/flappyCat";
 import { randomNumber } from "../utils/others";
 
 const sadCatImg = (
-  <img
-    className="h-6 w-6 md:h-12 md:w-12 inline"
-    src="images/sad-cat.png"
-    alt="Sad cat"
-  ></img>
+  <img className="inline w-full h-full" src="images/sad-cat-2.png" alt="Sad cat"></img>
 );
 const flappyCatImg = (
-  <img
-    className="h-6 w-6 md:h-12 md:w-12 inline"
-    src="images/flappy-cat.png"
-    alt="Flappy cat"
-  ></img>
+  <img className="inline w-full h-full" src="images/flappy-cat-2.png" alt="Flappy cat"></img>
 );
 
 enum GameStatus {
@@ -42,6 +42,8 @@ const useFlappyCat = () => {
 
   const catStyles = {
     top: `${catPosition}%`,
+    width: IMAGE_WIDTH + "%",
+    height: IMAGE_HEIGHT + "%",
   };
 
   const topObstacleStyles = {
@@ -71,9 +73,6 @@ const useFlappyCat = () => {
     const topObstacleHeight = +randomNumber(100 - OBSTACLE_GAP, 1);
     setTopObstacleHeight(topObstacleHeight);
     setBottomObstacleHeight(100 - OBSTACLE_GAP - topObstacleHeight);
-
-    console.log(topObstacleHeight, 100 - OBSTACLE_GAP - topObstacleHeight);
-    
   };
 
   const resetGame = () => {
@@ -122,7 +121,7 @@ const useFlappyCat = () => {
     if (gameStatus === GameStatus["in-progress"]) {
       let timer: number;
 
-      if (catPosition < 88) {
+      if (catPosition < 100 - IMAGE_HEIGHT) {
         timer = setInterval(() => {
           setCatPosition((prev) => prev + GRAVITY);
         }, 50);
@@ -140,11 +139,11 @@ const useFlappyCat = () => {
   useEffect(() => {
     const isCollideWithTopObstacle = catPosition < topObstacleHeight;
     const isCollideWithBottomObstacle =
-      catPosition >= 100 - bottomObstacleHeight - 12;
+      catPosition >= 100 - bottomObstacleHeight - IMAGE_HEIGHT;
 
     if (
       (isCollideWithTopObstacle || isCollideWithBottomObstacle) &&
-      obstacleLeftPostion <= 8
+      obstacleLeftPostion <= IMAGE_WIDTH
     ) {
       setGameStatus(GameStatus.finished);
     }
