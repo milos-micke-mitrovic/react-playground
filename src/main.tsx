@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import i18n from "./i18"; /*Don't delete this i18n line*/
 import router from "./router";
 import "./index.css";
@@ -11,7 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Suspense
       fallback={<Spinner additionalClasses="bg-dark left-0 absolute" />}
     >
-      <RouterProvider router={router} />
+      <QueryClientProvider client={new QueryClient()}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </Suspense>
   </React.StrictMode>
 );

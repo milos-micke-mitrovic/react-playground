@@ -58,6 +58,18 @@
   "width": "Width",
   "height": "Height",
   "mines": "Mines",
+  "rows": "Rows",
+  "columns": "Columns",
   "flappy-cat": "Flappy cat",
-  "time": "Time"
+  "time": "Time",
+  "opsss": "Opsss",
+  "error-msg": "Something seriously bad happened",
+  "dogs": "Dogs",
+  "food": "Food",
+  "cats": "Cats",
+  "nature": "Nature",
+  "easy": "Easy",
+  "medium": "Medium",
+  "hard": "Hard",
+  "pro": "Pro"
 }

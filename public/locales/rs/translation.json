@@ -58,6 +58,18 @@
   "width": "Širina",
   "height": "Visina",
   "mines": "Mine",
+  "rows": "Redovi",
+  "columns": "Kolone",
   "flappy-cat": "Lagana mačkica",
-  "time": "Vreme"
+  "time": "Vreme",
+  "opsss": "Upsss",
+  "error-msg": "Nešto se ozbiljno loše desilo",
+  "dogs": "Psi",
+  "food": "Hrana",
+  "cats": "Mačke",
+  "nature": "Prirorda",
+  "easy": "Lako",
+  "medium": "Srednje",
+  "hard": "Teško",
+  "pro": "Profesionalac"
 }
