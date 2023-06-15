@@ -10,7 +10,7 @@ type Props = {
   onSearchClick: () => void;
   term: string;
   options: [];
-  setCity: (option: GeoOptionType) => void;
+  onSetCity: (option: GeoOptionType) => void;
 };
 
 const Search = ({
@@ -18,7 +18,7 @@ const Search = ({
   onSearchClick,
   term,
   options,
-  setCity,
+  onSetCity,
 }: Props): JSX.Element => {
   const { t } = useTranslation();
 
@@ -35,7 +35,10 @@ const Search = ({
 
         <div className="absolute flex flex-col gap-1 grow top-10">
           {options.map((option: GeoOptionType, i: number) => (
-            <button key={option.name + "-" + i} onClick={() => setCity(option)}>
+            <button
+              key={option.name + "-" + i}
+              onClick={() => onSetCity(option)}
+            >
               {option.name}, {option.country}
             </button>
           ))}

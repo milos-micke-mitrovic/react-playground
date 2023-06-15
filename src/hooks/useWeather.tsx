@@ -6,15 +6,21 @@ import { GeoOptionType, ForecastType } from "../types/others";
 const useWeather = () => {
   const [term, setTerm] = useState<string>("");
   const [city, setCity] = useState<GeoOptionType | null>(null);
+  const [searchClicked, setSearchClicked] = useState(false);
+  const [searchOptionsAreNeeded, setSearchOptionsAreNeeded] = useState(true);
   // const [options, setOptions] = useState<[]>([]);
   // const [forecast, setForecast] = useState<ForecastType | null>(null);
 
-  const forecastMutation = useMutation({
-    mutationFn: (city: GeoOptionType) =>
+  const forecastQuery = useQuery({
+    queryKey: ["getForecast", city],
+    enabled: city != null && searchClicked,
+    queryFn: (): Promise<ForecastType | null> =>
       fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${
-          city.lon
-        }&units=metric&appid=${import.meta.env.VITE_WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${
+          city?.lat
+        }&lon=${city?.lon}&units=metric&appid=${
+          import.meta.env.VITE_WEATHER_API_KEY
+        }`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -25,10 +31,12 @@ const useWeather = () => {
         }),
   });
 
-  const searchOptionsMutation = useMutation({
-    mutationFn: (value: string) =>
+  const searchOptionsQuery = useQuery({
+    queryKey: ["getSearchOptions", term],
+    enabled: term !== "" && searchOptionsAreNeeded,
+    queryFn: (): Promise<[]> =>
       fetch(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=${
+        `https://api.openweathermap.org/geo/1.0/direct?q=${term}&limit=5&appid=${
           import.meta.env.VITE_WEATHER_API_KEY
         }`
       )
@@ -38,35 +46,35 @@ const useWeather = () => {
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-
-    setTerm(value);
-
+    setTerm(value.trim());
     if (value.trim() === "") return;
+    setSearchOptionsAreNeeded(true);
+  };
 
-    searchOptionsMutation.mutate(value.trim());
+  const onSetCity = (city: GeoOptionType) => {
+    setCity(city);
+    setSearchOptionsAreNeeded(false);
   };
 
   const onSearchClick = () => {
     if (!city) return;
-
-    forecastMutation.mutate(city);
+    setSearchClicked(true);
   };
 
   useEffect(() => {
     if (city) {
-      setTerm(city.name);
-
-      searchOptionsMutation.reset();
+      setTerm(city.name.trim());
+      searchOptionsQuery.remove();
     }
   }, [city]);
 
   return {
     term,
-    setCity,
+    onSetCity,
     onInputChange,
     onSearchClick,
-    searchOptionsMutation,
-    forecastMutation,
+    searchOptionsQuery,
+    forecastQuery,
   };
 };
 

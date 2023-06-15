@@ -11,11 +11,11 @@ import Error from "../components/UI/Error";
 const Weather = (): JSX.Element => {
   const {
     term,
-    setCity,
+    onSetCity,
     onInputChange,
     onSearchClick,
-    searchOptionsMutation,
-    forecastMutation,
+    searchOptionsQuery,
+    forecastQuery,
   } = useWeather();
 
   return (
@@ -23,21 +23,21 @@ const Weather = (): JSX.Element => {
       <PageTitle title="weather-forecast" icon={faCloud} />
 
       <div className="flex flex-col gap-16 items-center">
-        {!forecastMutation.data && (
+        {!forecastQuery.data && (
           <Search
             onInputChange={onInputChange}
             onSearchClick={onSearchClick}
             term={term}
-            options={searchOptionsMutation.data || []}
-            setCity={setCity}
+            options={searchOptionsQuery.data || []}
+            onSetCity={onSetCity}
           />
         )}
 
-        {forecastMutation.isError && <Error />}
+        {forecastQuery.isError && <Error />}
 
-        {forecastMutation.isLoading && <Spinner />}
+        {forecastQuery.fetchStatus === "fetching" && <Spinner />}
 
-        {forecastMutation.data && <Forecast data={forecastMutation.data} />}
+        {forecastQuery.data && <Forecast data={forecastQuery.data} />}
       </div>
     </>
   );
